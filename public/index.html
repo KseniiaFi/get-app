@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budjetin Seuranta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Budjetin Seuranta</h1>
+
+    <div id="register-form" class="form-container">
+        <h3>Rekisteröityminen</h3>
+        <form id="register" action="javascript:void(0);">
+            <input type="email" id="register-email" placeholder="Sähköposti" required>
+            <input type="password" id="register-password" placeholder="Salasana" required>
+            <button type="submit">Rekisteröidy</button>
+        </form>
+    </div>
+
+    <div id="login-form" class="form-container">
+        <h3>Kirjautuminen</h3>
+        <form id="login" action="javascript:void(0);">
+            <input type="email" id="login-email" placeholder="Sähköposti" required>
+            <input type="password" id="login-password" placeholder="Salasana" required>
+            <button type="submit">Kirjaudu sisään</button>
+        </form>
+    </div>
+
+    <div id="budgeting-section" style="display: none;">
+        <label for="startDate">Aloituspäivämäärä:</label>
+        <input type="date" id="startDate">
+        
+        <label for="endDate">Loppupäivämäärä:</label>
+        <input type="date" id="endDate">
+        
+        <label for="income">Lisää tulo:</label>
+        <input type="number" id="income" placeholder="Syötä tulon määrä">
+        
+        <label for="expenseCategory">Valitse menojen kategoria:</label>
+        <select id="expenseCategory">
+            <option value="Vuokra">Vuokra</option>
+            <option value="Vakuutukset">Vakuutukset</option>
+            <option value="Verot">Verot</option>
+            <option value="Tilaukset">Tilaukset</option>
+            <option value="Luotto">Luotto</option>
+            <option value="Vaatteet">Vaatteet</option>
+            <option value="Viihde">Viihde</option>
+            <option value="Ruokaostokset">Ruokaostokset</option>
+            <option value="Säästöt">Säästöt</option>
+        </select>
+
+        <label for="expense">Lisää meno:</label>
+        <input type="number" id="expense" placeholder="Syötä menon määrä">
+        
+        <button id="addIncome"><i class="fas fa-plus"></i> Lisää tulo</button>
+        <button id="addExpense"><i class="fas fa-minus"></i> Lisää meno</button>
+
+        <div id="balance">Nykyinen saldo: €0</div>
+        <div id="dateRange">Budjetti aikavälillä: <span id="startDateDisplay"></span> - <span id="endDateDisplay"></span></div>
+        
+        <h2>Tapahtumat</h2>
+        <ul id="transactions"></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
